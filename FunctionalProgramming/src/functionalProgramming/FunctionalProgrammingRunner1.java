@@ -7,6 +7,9 @@ public class FunctionalProgrammingRunner1 {
     public static void main(String[] args) {
 
 	List<String> list1 = List.of("Abra", "Kadabra", "Alakazam");
+	loop(list1);
+	loopFP(list1);
+	loopLogic(list1);
 	loopLogicFP(list1);
     }
 
