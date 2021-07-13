@@ -7,6 +7,8 @@ import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.atomic.LongAdder;
 
 /*
+Concurrent HashMap has Atomic operations that allow thread-safety, plus it uses 
+different locks for different sections of the map, speeding up the common concurrency
 
 */
 public class ConcurrentMapRunner {
@@ -29,7 +31,7 @@ public class ConcurrentMapRunner {
 	System.out.println(ocurrencias0);
 
 	// Now i use a concurrent map, because it is thread safe:
-	// ConcurrentMap is Thread safe using its methods:
+	// ConcurrentMap offers atomic methods in addition to the locks:
 	ConcurrentMap<Character, LongAdder> ocurrencias1 = new ConcurrentHashMap<>();
 
 	for (char ch : str.toCharArray()) {
