@@ -1,0 +1,12 @@
+To create a sprong project, I go to:
+https://start.spring.io/
+
+Chose the defaults to start,
+In group, name the project like com.<packagename> and name it in Name
+Click generate, and extract that zip where wanted the project.
+
+In eclipse, File-> Import -> Existing Maven Project and choose the folder that I have extracted.
+Select the pom.xml and wait to the import done.
+
+Once the downloads have been completed:
+In src/main/java, in the package name before, a java file is present and ready to be executed.
