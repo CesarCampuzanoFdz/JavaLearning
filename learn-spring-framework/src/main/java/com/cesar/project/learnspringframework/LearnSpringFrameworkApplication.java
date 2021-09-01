@@ -12,6 +12,9 @@ import com.cesar.project.learnspringframework.game.tightlyCoupled.GameRunner;
 import com.cesar.project.learnspringframework.game.tightlyCoupled.MarioGame;
 
 @SpringBootApplication
+//It is not necessary here, but to scan different packages looking for components to autowire
+//a @ComponentScan can be made in any needed package
+//@ComponentScan({"com.cesar.project.learnspringframework"},{"com.cesar.project.learnspringframework"})
 public class LearnSpringFrameworkApplication {
 
 	public static void main(String[] args) {
