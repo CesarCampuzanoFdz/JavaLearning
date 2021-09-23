@@ -1,6 +1,21 @@
 package com.myproject.learnspringboot.course.bean;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity(name = "Course")
 public class Course {
+	@Id
+	@GeneratedValue
+	private long id;
+	private String name;
+	private String author;
+
+	// Every Entity needs a default constructor:
+	public Course() {
+	}
+
 	public long getId() {
 		return id;
 	}
@@ -19,10 +34,6 @@ public class Course {
 		this.name = name;
 		this.author = author;
 	}
-
-	private long id;
-	private String name;
-	private String author;
 
 	@Override
 	public String toString() {

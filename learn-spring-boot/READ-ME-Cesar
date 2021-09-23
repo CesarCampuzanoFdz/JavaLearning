@@ -1,0 +1,26 @@
+I have used a list to show some courses, but now I will use a in-memory database to retrieve them,
+I will use h2, so I create the dependencies in the pom.xml:
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+
+---------------------------------------------------------------------------------------------
+2021-09-22 07:26:42.830  INFO 14900 --- [  restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:6482e582-db5e-40d4-8c60-8ebcfde34803'		
+With only this, the url for the database is random, so I change it in the application properties (and add to be able to initialize it):
+#I change the url for the h2 database:
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.jpa.defer-datasource-initialization=true
+
+---------------------------------------------------------------------------------------------
+Now I create a data.sql to load some data in main/resources.
+This queries will be executed at the begining of the execution, so I will be able to access them later.
+---------------------------------------------------------------------------------------------
+To use the database, I create a CourseRepository, extending JpaRepository<Course, Long>, to manage Courses, with an ID type Long
+With this repo for the databse, in CourseController.java I implement some methods to add, update and delete entries in the db
